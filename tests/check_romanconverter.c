@@ -26,7 +26,6 @@ START_TEST(test_roman_converter_create)
  }
  END_TEST
 
-
 Suite * roman_suite(void)
 {
   Suite *s;
@@ -38,7 +37,7 @@ Suite * roman_suite(void)
   tc_core = tcase_create("Core");
 
   tcase_add_test(tc_core, test_roman_converter_create);
-  tcase_add_test(tc_core, test_roman_converter_destroy);
+  //tcase_add_test(tc_core, test_roman_converter_destroy);
   suite_add_tcase(s, tc_core);
 
   return s;

@@ -8,7 +8,6 @@ struct RomanConverter {
 typedef struct RomanConverter RomanConverter;
 
 RomanConverter * romanconverter_create();
-RomanConverter * romanconverter_free(RomanConverter * converter);
-
+void romanconverter_free(RomanConverter  * converter);
 
 #endif
