@@ -7,5 +7,5 @@ RomanConverter * romanconverter_create() {
 };
 
 RomanConverter * romanconverter_free(RomanConverter * converter) {
-    free(converter);
+    //free(converter);
 }

@@ -14,6 +14,18 @@ START_TEST(test_roman_converter_create)
  }
  END_TEST
 
+ START_TEST(test_roman_converter_destroy)
+ {
+   RomanConverter *converter;
+
+   converter = romanconverter_create();
+
+   romanconverter_free(converter);
+
+   ck_assert_msg(NULL == converter, "Converter not destroyed! Oh Nooos!");
+ }
+ END_TEST
+
 
 Suite * roman_suite(void)
 {
@@ -26,6 +38,7 @@ Suite * roman_suite(void)
   tc_core = tcase_create("Core");
 
   tcase_add_test(tc_core, test_roman_converter_create);
+  tcase_add_test(tc_core, test_roman_converter_destroy);
   suite_add_tcase(s, tc_core);
 
   return s;
