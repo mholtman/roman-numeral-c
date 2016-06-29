@@ -218,6 +218,16 @@ START_TEST(test_can_convert_3330_to_MMMCCCXXX)
 }
 END_TEST
 
+START_TEST(test_can_convert_3339_to_MMMCCCXXXIX)
+{
+  char * actual = romanconverter_convertToRoman(3339);
+
+  ck_assert_str_eq(actual, "MMMCCCXXXIX");
+
+  free(actual);
+}
+END_TEST
+
 Suite * integer_suite(void)
 {
   Suite *s;
@@ -236,6 +246,7 @@ Suite * integer_suite(void)
   tcase_add_test(tc_basic, test_can_convert_3350_to_MMMCCCL);
   tcase_add_test(tc_basic, test_can_convert_3340_to_MMMCCCXL);
   tcase_add_test(tc_basic, test_can_convert_3330_to_MMMCCCXXX);
+  tcase_add_test(tc_basic, test_can_convert_3339_to_MMMCCCXXXIX);
 
   suite_add_tcase(s, tc_basic);
 
