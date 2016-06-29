@@ -299,17 +299,64 @@ Suite * integer_suite(void)
 
 }
 
+START_TEST(test_can_add_two_numbers)
+{
+  char * actual = romanconverter_addition("LIX", "XLI");
+
+  ck_assert_str_eq(actual, "C");
+
+  free(actual);
+}
+END_TEST
+
+START_TEST(test_can_subtract_two_numbers)
+{
+  char * actual = romanconverter_subtraction("C", "XLI");
+
+  ck_assert_str_eq(actual, "LIX");
+
+  free(actual);
+}
+END_TEST
+
+
+Suite * operations_suite(void)
+{
+  Suite *s;
+  TCase *tc_addition;
+  TCase *tc_subtraction;
+
+  s = suite_create("Operations");
+
+  tc_addition = tcase_create("Addition");
+
+  tcase_add_test(tc_addition, test_can_add_two_numbers);
+
+  tc_subtraction = tcase_create("Subtraction");
+
+  tcase_add_test(tc_subtraction, test_can_subtract_two_numbers);
+
+  suite_add_tcase(s, tc_addition);
+  suite_add_tcase(s, tc_subtraction);
+
+  return s;
+
+}
+
 int main(void){
   int number_failed;
   Suite *s;
   Suite *intToRoman;
+  Suite *operations;
 
   SRunner *sr;
 
   s = roman_suite();
   intToRoman = integer_suite();
+  operations = operations_suite();
   sr = srunner_create(s);
   srunner_add_suite(sr, intToRoman);
+  srunner_add_suite(sr, operations);
 
 
   srunner_run_all(sr, CK_VERBOSE);

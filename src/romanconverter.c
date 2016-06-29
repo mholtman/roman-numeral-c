@@ -166,6 +166,16 @@ char * romanconverter_convertToRoman(int integerToConvert) {
   return romanToReturn;
 }
 
+char * romanconverter_addition(char * firstNumber, char * secondNumber)
+{
+  return romanconverter_convertToRoman(romanconverter_convertToInt(firstNumber) + romanconverter_convertToInt(secondNumber));
+}
+
+char * romanconverter_subtraction(char * firstNumber, char * secondNumber)
+{
+  return romanconverter_convertToRoman(romanconverter_convertToInt(firstNumber) - romanconverter_convertToInt(secondNumber));
+}
+
 int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)
 {
   if (index > 0 && strncmp(previous, check, 1) == 0)
