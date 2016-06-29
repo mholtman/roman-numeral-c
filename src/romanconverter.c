@@ -24,16 +24,22 @@ int const romanconverter_convert(char * romanNumeral) {
       convertedNum += 1;
     } else if (strncmp(&romanNumeral[i], "V" , 1) == 0) {
       convertedNum += 5;
-      if (i > 0 && strncmp(&romanNumeral[i - 1], "I", 1) == 0) {
-        convertedNum -= 2;
-      }
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "I", 2, convertedNum);
     } else if (strncmp(&romanNumeral[i], "X" , 1) == 0) {
       convertedNum += 10;
-      if (i > 0 && strncmp(&romanNumeral[i - 1], "I", 1) == 0) {
-        convertedNum -= 2;
-      }
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "I", 2, convertedNum);
     }
   }
 
   return convertedNum;
+}
+
+int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)
+{
+  if (index > 0 && strncmp(previous, check, 1) == 0)
+  {
+    totalSoFar -= adjustment;
+  }
+
+  return totalSoFar;
 }
