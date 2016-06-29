@@ -53,16 +53,46 @@ char * romanconverter_convertToRoman(int integerToConvert) {
 
   double leftover = integerToConvert;
 
-  double numberOfThousands = floor(integerToConvert / 1000);
-  int i;
+  char * buffer_ptr = buffer;
 
-  for(i = 0; i < numberOfThousands; i++)
+  while (leftover >= 1000)
   {
-    buffer[i] = 'M';
+    *buffer_ptr = 'M';
+    buffer_ptr++;
     leftover -= 1000;
   }
 
-  return buffer;
+  while (leftover >= 900)
+  {
+    *buffer_ptr = 'C';
+    buffer_ptr++;
+    *buffer_ptr = 'M';
+    buffer_ptr++;
+    leftover -= 900;
+  }
+
+  while (leftover >= 500)
+  {
+    *buffer_ptr = 'D';
+    buffer_ptr++;
+    leftover -= 500;
+  }
+
+  while (leftover >= 400)
+  {
+    *buffer_ptr = 'C';
+    buffer_ptr++;
+    *buffer_ptr = 'D';
+    buffer_ptr++;
+    leftover -= 400;
+  }
+
+  char * romanToReturn = calloc(strlen(buffer + 1), sizeof(char));
+  strcpy(romanToReturn, buffer);
+
+  free(buffer);
+
+  return romanToReturn;
 }
 
 
