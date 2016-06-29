@@ -13,14 +13,19 @@ void romanconverter_free(RomanConverter * converter) {
     converter = NULL;
 }
 
-int romanconverter_convert(char * romanNumeral) {
+int const romanconverter_convert(char * romanNumeral) {
 
-  if (strcmp(romanNumeral, "I") == 0)
+  int convertedNum = 0;
+  int i;
+
+  for(i = 0; i < strlen(romanNumeral); i++)
   {
-    return 1;
+    if (strncmp(&romanNumeral[i], "I" , 1) == 0) {
+      convertedNum += 1;
+    } else {
+      convertedNum += 5;
+    }
   }
-  else
-  {
-    return 5;
-  }
+
+  return convertedNum;
 }
