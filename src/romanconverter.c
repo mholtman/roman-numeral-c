@@ -47,9 +47,18 @@ int const romanconverter_convertToInt(char * romanNumeral) {
 }
 
 char * romanconverter_convertToRoman(int integerToConvert) {
-  char * romanString = "I";
 
-  return romanString;
+  char * buffer = calloc(16, sizeof(char));
+
+  int numberOfOnes = integerToConvert / 1;
+  int i;
+
+  for(i = 0; i < numberOfOnes; i++)
+  {
+    buffer[i] = 'I';
+  }
+
+  return buffer;
 }
 
 int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)

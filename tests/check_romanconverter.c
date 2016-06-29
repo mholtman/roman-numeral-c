@@ -130,7 +130,21 @@ Suite * roman_suite(void)
 
 START_TEST(test_can_convert_1_to_I)
 {
-  ck_assert_str_eq(romanconverter_convertToRoman(1), "I");
+  char * actual  = romanconverter_convertToRoman(1);
+
+  ck_assert_str_eq(actual, "I");
+
+  free(actual);
+}
+END_TEST
+
+START_TEST(test_can_convert_2_to_II)
+{
+  char * actual = romanconverter_convertToRoman(2);
+
+  ck_assert_str_eq(actual, "II");
+
+  free(actual);
 }
 END_TEST
 
@@ -144,6 +158,7 @@ Suite * integer_suite(void)
   tc_basic = tcase_create("Basic");
 
   tcase_add_test(tc_basic, test_can_convert_1_to_I);
+  tcase_add_test(tc_basic, test_can_convert_2_to_II);
 
   suite_add_tcase(s, tc_basic);
 
