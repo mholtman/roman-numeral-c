@@ -28,6 +28,12 @@ int const romanconverter_convert(char * romanNumeral) {
     } else if (strncmp(&romanNumeral[i], "X" , 1) == 0) {
       convertedNum += 10;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "I", 2, convertedNum);
+    } else if (strncmp(&romanNumeral[i], "L" , 1) == 0) {
+      convertedNum += 50;
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "X", 20, convertedNum);
+    } else if (strncmp(&romanNumeral[i], "C" , 1) == 0) {
+      convertedNum += 100;
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "X", 20, convertedNum);
     }
   }
 

@@ -68,6 +68,18 @@ START_TEST(test_can_convert_IX_to_9)
 }
 END_TEST
 
+START_TEST(test_can_convert_XLIX_to_49)
+{
+  ck_assert_int_eq(romanconverter_convert("XLIX"), 49);
+}
+END_TEST
+
+START_TEST(test_can_convert_XCIX_to_99)
+{
+  ck_assert_int_eq(romanconverter_convert("XCIX"), 99);
+}
+END_TEST
+
 Suite * roman_suite(void)
 {
   Suite *s;
@@ -87,6 +99,8 @@ Suite * roman_suite(void)
   tcase_add_test(tc_core, test_can_convert_VIII_to_8);
   tcase_add_test(tc_core, test_can_convert_X_to_10);
   tcase_add_test(tc_core, test_can_convert_IX_to_9);
+  tcase_add_test(tc_core, test_can_convert_XLIX_to_49);
+  tcase_add_test(tc_core, test_can_convert_XCIX_to_99);
   suite_add_tcase(s, tc_core);
 
   return s;
