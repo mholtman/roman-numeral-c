@@ -11,3 +11,7 @@ void romanconverter_free(RomanConverter * converter) {
     free(converter);
     converter = NULL;
 }
+
+int romanconverter_convert(char * romanNumeral) {
+   return 1;
+}

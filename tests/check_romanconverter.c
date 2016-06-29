@@ -26,18 +26,25 @@ START_TEST(test_roman_converter_create)
  }
  END_TEST
 
+ START_TEST(test_can_convert_I_to_1)
+ {
+   ck_assert_msg(romanconverter_convert('I') == 1, "Couldn't convert I");
+ }
+END_TEST
+
 Suite * roman_suite(void)
 {
   Suite *s;
   TCase *tc_core;
 
-  s = suite_create("Roman");
+  s = suite_create("RomanToArabic");
 
   /* Core test case */
   tc_core = tcase_create("Core");
 
   tcase_add_test(tc_core, test_roman_converter_create);
   //tcase_add_test(tc_core, test_roman_converter_destroy);
+  tcase_add_test(tc_core, test_can_convert_I_to_1);
   suite_add_tcase(s, tc_core);
 
   return s;
