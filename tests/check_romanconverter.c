@@ -128,21 +128,11 @@ Suite * roman_suite(void)
   return s;
 }
 
-START_TEST(test_can_convert_1_to_I)
+START_TEST(test_can_convert_3000_to_MMM)
 {
-  char * actual  = romanconverter_convertToRoman(1);
+  char * actual = romanconverter_convertToRoman(3000);
 
-  ck_assert_str_eq(actual, "I");
-
-  free(actual);
-}
-END_TEST
-
-START_TEST(test_can_convert_2_to_II)
-{
-  char * actual = romanconverter_convertToRoman(2);
-
-  ck_assert_str_eq(actual, "II");
+  ck_assert_str_eq(actual, "MMM");
 
   free(actual);
 }
@@ -157,8 +147,7 @@ Suite * integer_suite(void)
 
   tc_basic = tcase_create("Basic");
 
-  tcase_add_test(tc_basic, test_can_convert_1_to_I);
-  tcase_add_test(tc_basic, test_can_convert_2_to_II);
+  tcase_add_test(tc_basic, test_can_convert_3000_to_MMM);
 
   suite_add_tcase(s, tc_basic);
 

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "romanconverter.h"
 
 RomanConverter * romanconverter_create() {
@@ -50,16 +51,21 @@ char * romanconverter_convertToRoman(int integerToConvert) {
 
   char * buffer = calloc(16, sizeof(char));
 
-  int numberOfOnes = integerToConvert / 1;
+  double leftover = integerToConvert;
+
+  double numberOfThousands = floor(integerToConvert / 1000);
   int i;
 
-  for(i = 0; i < numberOfOnes; i++)
+  for(i = 0; i < numberOfThousands; i++)
   {
-    buffer[i] = 'I';
+    buffer[i] = 'M';
+    leftover -= 1000;
   }
 
   return buffer;
 }
+
+
 
 int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)
 {
