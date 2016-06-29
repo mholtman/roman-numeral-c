@@ -22,8 +22,12 @@ int const romanconverter_convert(char * romanNumeral) {
   {
     if (strncmp(&romanNumeral[i], "I" , 1) == 0) {
       convertedNum += 1;
-    } else {
-      convertedNum += 5;
+    } else if (strncmp(&romanNumeral[i], "V" , 1) == 0) {
+      if (i > 0 && strncmp(&romanNumeral[i - 1], "I", 1) == 0) {
+        convertedNum += 3;
+      } else {
+        convertedNum += 5;
+      }
     }
   }
 

@@ -44,6 +44,12 @@ START_TEST(test_can_convert_V_to_5)
 }
 END_TEST
 
+START_TEST(test_can_convert_IV_to_4)
+{
+  ck_assert_int_eq(romanconverter_convert("IV"), 4);
+}
+END_TEST
+
 Suite * roman_suite(void)
 {
   Suite *s;
@@ -59,6 +65,7 @@ Suite * roman_suite(void)
   tcase_add_test(tc_core, test_can_convert_I_to_1);
   tcase_add_test(tc_core, test_can_convert_II_to_2);
   tcase_add_test(tc_core, test_can_convert_V_to_5);
+  tcase_add_test(tc_core, test_can_convert_IV_to_4);
   suite_add_tcase(s, tc_core);
 
   return s;
