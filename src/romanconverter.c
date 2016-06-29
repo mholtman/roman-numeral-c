@@ -87,6 +87,13 @@ char * romanconverter_convertToRoman(int integerToConvert) {
     leftover -= 400;
   }
 
+  while (leftover >= 100)
+  {
+    *buffer_ptr = 'C';
+    buffer_ptr++;
+    leftover -= 100;
+  }
+
   char * romanToReturn = calloc(strlen(buffer + 1), sizeof(char));
   strcpy(romanToReturn, buffer);
 
