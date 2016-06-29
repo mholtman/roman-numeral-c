@@ -13,7 +13,7 @@ void romanconverter_free(RomanConverter * converter) {
     converter = NULL;
 }
 
-int const romanconverter_convert(char * romanNumeral) {
+int const romanconverter_convertToInt(char * romanNumeral) {
 
   int convertedNum = 0;
   int i;
