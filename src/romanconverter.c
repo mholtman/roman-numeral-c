@@ -135,6 +135,13 @@ char * romanconverter_convertToRoman(int integerToConvert) {
     leftover -= 9;
   }
 
+  while (leftover >= 5)
+  {
+    *buffer_ptr = 'V';
+    buffer_ptr++;
+    leftover -= 5;
+  }
+
   char * romanToReturn = calloc(strlen(buffer + 1), sizeof(char));
   strcpy(romanToReturn, buffer);
 
@@ -142,8 +149,6 @@ char * romanconverter_convertToRoman(int integerToConvert) {
 
   return romanToReturn;
 }
-
-
 
 int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)
 {
