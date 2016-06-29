@@ -23,10 +23,14 @@ int const romanconverter_convert(char * romanNumeral) {
     if (strncmp(&romanNumeral[i], "I" , 1) == 0) {
       convertedNum += 1;
     } else if (strncmp(&romanNumeral[i], "V" , 1) == 0) {
+      convertedNum += 5;
       if (i > 0 && strncmp(&romanNumeral[i - 1], "I", 1) == 0) {
-        convertedNum += 3;
-      } else {
-        convertedNum += 5;
+        convertedNum -= 2;
+      }
+    } else if (strncmp(&romanNumeral[i], "X" , 1) == 0) {
+      convertedNum += 10;
+      if (i > 0 && strncmp(&romanNumeral[i - 1], "I", 1) == 0) {
+        convertedNum -= 2;
       }
     }
   }
