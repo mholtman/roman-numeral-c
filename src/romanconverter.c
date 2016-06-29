@@ -46,6 +46,12 @@ int const romanconverter_convertToInt(char * romanNumeral) {
   return convertedNum;
 }
 
+char * romanconverter_convertToRoman(int integerToConvert) {
+  char * romanString = "I";
+
+  return romanString;
+}
+
 int adjustForPreviousChar(int index, char * previous, char* check, int adjustment, int totalSoFar)
 {
   if (index > 0 && strncmp(previous, check, 1) == 0)

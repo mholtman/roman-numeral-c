@@ -128,15 +128,43 @@ Suite * roman_suite(void)
   return s;
 }
 
+START_TEST(test_can_convert_1_to_I)
+{
+  ck_assert_str_eq(romanconverter_convertToRoman(1), "I");
+}
+END_TEST
+
+Suite * integer_suite(void)
+{
+  Suite *s;
+  TCase *tc_basic;
+
+  s = suite_create("IntegerToRoman");
+
+  tc_basic = tcase_create("Basic");
+
+  tcase_add_test(tc_basic, test_can_convert_1_to_I);
+
+  suite_add_tcase(s, tc_basic);
+
+  return s;
+
+}
+
 int main(void){
   int number_failed;
   Suite *s;
+  Suite *intToRoman;
+
   SRunner *sr;
 
   s = roman_suite();
+  intToRoman = integer_suite();
   sr = srunner_create(s);
+  srunner_add_suite(sr, intToRoman);
 
-  srunner_run_all(sr, CK_NORMAL);
+
+  srunner_run_all(sr, CK_VERBOSE);
   number_failed = srunner_ntests_failed(sr);
   srunner_free(sr);
 
