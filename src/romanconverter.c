@@ -142,6 +142,22 @@ char * romanconverter_convertToRoman(int integerToConvert) {
     leftover -= 5;
   }
 
+  while (leftover >= 4)
+  {
+    *buffer_ptr = 'I';
+    buffer_ptr++;
+    *buffer_ptr = 'V';
+    buffer_ptr++;
+    leftover -= 4;
+  }
+
+  while (leftover >= 1)
+  {
+    *buffer_ptr = 'I';
+    buffer_ptr++;
+    leftover -= 1;
+  }
+
   char * romanToReturn = calloc(strlen(buffer + 1), sizeof(char));
   strcpy(romanToReturn, buffer);
 

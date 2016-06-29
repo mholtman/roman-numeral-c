@@ -238,6 +238,37 @@ START_TEST(test_can_convert_3335_to_MMMCCCXXXV)
 }
 END_TEST
 
+START_TEST(test_can_convert_3334_to_MMMCCCXXXIV)
+{
+  char * actual = romanconverter_convertToRoman(3334);
+
+  ck_assert_str_eq(actual, "MMMCCCXXXIV");
+
+  free(actual);
+}
+END_TEST
+
+START_TEST(test_can_convert_3333_to_MMMCCCXXXIII)
+{
+  char * actual = romanconverter_convertToRoman(3333);
+
+  ck_assert_str_eq(actual, "MMMCCCXXXIII");
+
+  free(actual);
+}
+END_TEST
+
+START_TEST(test_can_convert_3888_to_MMMDCCCLXXXVIII)
+{
+  char * actual = romanconverter_convertToRoman(3888);
+
+  ck_assert_str_eq(actual, "MMMDCCCLXXXVIII");
+
+  free(actual);
+}
+END_TEST
+
+
 Suite * integer_suite(void)
 {
   Suite *s;
@@ -258,6 +289,9 @@ Suite * integer_suite(void)
   tcase_add_test(tc_basic, test_can_convert_3330_to_MMMCCCXXX);
   tcase_add_test(tc_basic, test_can_convert_3339_to_MMMCCCXXXIX);
   tcase_add_test(tc_basic, test_can_convert_3335_to_MMMCCCXXXV);
+  tcase_add_test(tc_basic, test_can_convert_3334_to_MMMCCCXXXIV);
+  tcase_add_test(tc_basic, test_can_convert_3333_to_MMMCCCXXXIII);
+  tcase_add_test(tc_basic, test_can_convert_3888_to_MMMDCCCLXXXVIII);
 
   suite_add_tcase(s, tc_basic);
 
