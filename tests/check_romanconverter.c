@@ -92,6 +92,13 @@ START_TEST(test_can_convert_CMXCIX_to_999)
 }
 END_TEST
 
+START_TEST(test_can_convert_MCMLXXVI_to_1976)
+{
+  ck_assert_int_eq(romanconverter_convert("MCMLXXVI"), 1976);
+}
+END_TEST
+
+
 Suite * roman_suite(void)
 {
   Suite *s;
@@ -115,6 +122,7 @@ Suite * roman_suite(void)
   tcase_add_test(tc_core, test_can_convert_XCIX_to_99);
   tcase_add_test(tc_core, test_can_convert_CDXCIX_to_499);
   tcase_add_test(tc_core, test_can_convert_CMXCIX_to_999);
+  tcase_add_test(tc_core, test_can_convert_MCMLXXVI_to_1976);
   suite_add_tcase(s, tc_core);
 
   return s;
