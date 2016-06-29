@@ -34,6 +34,12 @@ int const romanconverter_convert(char * romanNumeral) {
     } else if (strncmp(&romanNumeral[i], "C" , 1) == 0) {
       convertedNum += 100;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "X", 20, convertedNum);
+    } else if (strncmp(&romanNumeral[i], "D" , 1) == 0) {
+      convertedNum += 500;
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "C", 200, convertedNum);
+    } else if (strncmp(&romanNumeral[i], "M" , 1) == 0) {
+      convertedNum += 1000;
+      convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "C", 200, convertedNum);
     }
   }
 
