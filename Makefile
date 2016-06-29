@@ -10,7 +10,7 @@ check: roman
 	./roman
 
 roman: romanconverter.o check_romanconverter.o
-	$(CC) $(CFLAGS) -o roman romanconverter.o check_romanconverter.o $(LIBS)
+	$(CC) -o roman romanconverter.o check_romanconverter.o $(LIBS)
 	echo roman: make complete
 
 romanconverter.o: $(SOURCE_DIR)romanconverter.c $(SOURCE_DIR)romanconverter.h
@@ -23,3 +23,6 @@ clean:
 	rm roman
 	rm romanconverter.o
 	rm check_romanconverter.o
+
+valgrind: roman
+	valgrind ./roman
