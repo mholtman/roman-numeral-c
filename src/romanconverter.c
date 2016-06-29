@@ -110,6 +110,15 @@ char * romanconverter_convertToRoman(int integerToConvert) {
     leftover -= 50;
   }
 
+  while (leftover >= 40)
+  {
+    *buffer_ptr = 'X';
+    buffer_ptr++;
+    *buffer_ptr = 'L';
+    buffer_ptr++;
+    leftover -= 40;
+  }
+
   char * romanToReturn = calloc(strlen(buffer + 1), sizeof(char));
   strcpy(romanToReturn, buffer);
 
