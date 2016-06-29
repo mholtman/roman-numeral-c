@@ -1,4 +1,4 @@
-CC=gcc
+CC=cc
 CFLAGS =  `pkg-config --cflags check`
 LIBS = `pkg-config --libs check`
 SOURCE_DIR=src/
