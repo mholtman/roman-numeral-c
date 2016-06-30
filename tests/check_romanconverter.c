@@ -2,6 +2,8 @@
 #include <check.h>
 #include "check_romanconverter.h"
 #include "../src/romanconverter.h"
+#include "../src/integerconverter.h"
+#include "../src/romancalculator.h"
 
 
 START_TEST(test_roman_converter_create)
