@@ -5,14 +5,14 @@
 
 int romancalculator_addition(char * firstNumber, char * secondNumber, char * romanNumeralOut)
 {
-  strcpy(romanNumeralOut, romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) + integerconverter_convertToInt(secondNumber)));
+  strncpy(romanNumeralOut, romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) + integerconverter_convertToInt(secondNumber)), 16);
 
   return EXIT_SUCCESS;
 }
 
 int romancalculator_subtraction(char * firstNumber, char * secondNumber, char * romanNumeralOut)
 {
-  strcpy(romanNumeralOut, romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) - integerconverter_convertToInt(secondNumber)));
+  strncpy(romanNumeralOut, romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) - integerconverter_convertToInt(secondNumber)), 16);
 
   return EXIT_SUCCESS;
 }

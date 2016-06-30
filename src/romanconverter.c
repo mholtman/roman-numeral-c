@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <string.h>
-
 #include "romanconverter.h"
 
 char * romanconverter_convertToRoman(int integerToConvert) {
