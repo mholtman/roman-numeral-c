@@ -5,9 +5,11 @@
 #include "romanconverter.h"
 
 
-char * romancalculator_addition(char * firstNumber, char * secondNumber)
+int romancalculator_addition(char * firstNumber, char * secondNumber, char * romanNumeralOut)
 {
-  return romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) + integerconverter_convertToInt(secondNumber));
+  strcpy(romanNumeralOut, romanconverter_convertToRoman(integerconverter_convertToInt(firstNumber) + integerconverter_convertToInt(secondNumber)));
+
+  return EXIT_SUCCESS;
 }
 
 char * romancalculator_subtraction(char * firstNumber, char * secondNumber)

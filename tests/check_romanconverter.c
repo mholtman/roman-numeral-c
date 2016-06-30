@@ -278,11 +278,9 @@ Suite * integer_suite(void)
 
 START_TEST(test_can_add_two_numbers)
 {
-  char * actual = romancalculator_addition("LIX", "XLI");
-
+  char actual[16];
+  romancalculator_addition("LIX", "XLI", actual);
   ck_assert_str_eq(actual, "C");
-
-  free(actual);
 }
 END_TEST
 
