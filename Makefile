@@ -9,15 +9,15 @@ all: check
 check: roman
 	./roman
 
-roman: romanconverter.o check_romanconverter.o
-	$(CC) -o roman romanconverter.o check_romanconverter.o $(LIBS)
+roman: romanconverter.o check_romanconverter.o testRunner.o
+	$(CC) -o roman romanconverter.o check_romanconverter.o testRunner.o $(LIBS)
 	echo roman: make complete
 
 romanconverter.o: $(SOURCE_DIR)romanconverter.c $(SOURCE_DIR)romanconverter.h
 	$(CC) $(CFLAGS) -c $(SOURCE_DIR)romanconverter.c
 
-check_romanconverter.o: $(SOURCE_DIR)romanconverter.c $(TEST_DIR)check_romanconverter.c
-	$(CC) $(CFLAGS) -c $(TEST_DIR)check_romanconverter.c $(LIBS)
+check_romanconverter.o: $(SOURCE_DIR)romanconverter.c $(TEST_DIR)check_romanconverter.c $(TEST_DIR)testRunner.c
+	$(CC) $(CFLAGS) -c $(TEST_DIR)check_romanconverter.c  $(TEST_DIR)check_romanconverter.h $(TEST_DIR)testRunner.c $(LIBS)
 
 clean:
 	rm roman

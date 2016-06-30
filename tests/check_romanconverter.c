@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <check.h>
+#include "check_romanconverter.h"
 #include "../src/romanconverter.h"
+
 
 START_TEST(test_roman_converter_create)
  {
@@ -341,27 +343,4 @@ Suite * operations_suite(void)
 
   return s;
 
-}
-
-int main(void){
-  int number_failed;
-  Suite *s;
-  Suite *intToRoman;
-  Suite *operations;
-
-  SRunner *sr;
-
-  s = roman_suite();
-  intToRoman = integer_suite();
-  operations = operations_suite();
-  sr = srunner_create(s);
-  srunner_add_suite(sr, intToRoman);
-  srunner_add_suite(sr, operations);
-
-
-  srunner_run_all(sr, CK_VERBOSE);
-  number_failed = srunner_ntests_failed(sr);
-  srunner_free(sr);
-
-  return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
