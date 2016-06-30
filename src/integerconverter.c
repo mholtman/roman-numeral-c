@@ -21,24 +21,24 @@ int const romanconverter_convertToInt(char * romanNumeral) {
 
   for(i = 0; i < strlen(romanNumeral); i++)
   {
-    if (strncmp(&romanNumeral[i], "I" , 1) == 0) {
+    if (romanNumeral[i] == 'I') {
       convertedNum += 1;
-    } else if (strncmp(&romanNumeral[i], "V" , 1) == 0) {
+    } else if (romanNumeral[i] == 'V') {
       convertedNum += 5;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "I", 2, convertedNum);
-    } else if (strncmp(&romanNumeral[i], "X" , 1) == 0) {
+    } else if (romanNumeral[i] == 'X') {
       convertedNum += 10;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "I", 2, convertedNum);
-    } else if (strncmp(&romanNumeral[i], "L" , 1) == 0) {
+    } else if (romanNumeral[i] == 'L') {
       convertedNum += 50;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "X", 20, convertedNum);
-    } else if (strncmp(&romanNumeral[i], "C" , 1) == 0) {
+    } else if (romanNumeral[i] == 'C') {
       convertedNum += 100;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "X", 20, convertedNum);
-    } else if (strncmp(&romanNumeral[i], "D" , 1) == 0) {
+    } else if (romanNumeral[i] == 'D') {
       convertedNum += 500;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "C", 200, convertedNum);
-    } else if (strncmp(&romanNumeral[i], "M" , 1) == 0) {
+    } else if (romanNumeral[i] == 'M') {
       convertedNum += 1000;
       convertedNum = adjustForPreviousChar(i, &romanNumeral[i - 1], "C", 200, convertedNum);
     }
