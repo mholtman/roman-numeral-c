@@ -13,7 +13,7 @@ static int adjustForPreviousChar(int index, char previous, char check, int adjus
   return totalSoFar;
 }
 
-int const romanconverter_convertToInt(char * romanNumeral) {
+int const integerconverter_convertToInt(char * romanNumeral) {
 
   int convertedNum = 0;
   int i;

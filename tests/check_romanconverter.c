@@ -7,73 +7,73 @@
 
 START_TEST(test_can_convert_I_to_1)
  {
-   ck_assert_int_eq(romanconverter_convertToInt("I"), 1);
+   ck_assert_int_eq(integerconverter_convertToInt("I"), 1);
  }
 END_TEST
 
 START_TEST(test_can_convert_II_to_2)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("II"), 2);
+  ck_assert_int_eq(integerconverter_convertToInt("II"), 2);
 }
 END_TEST
 
 START_TEST(test_can_convert_V_to_5)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("V"), 5);
+  ck_assert_int_eq(integerconverter_convertToInt("V"), 5);
 }
 END_TEST
 
 START_TEST(test_can_convert_IV_to_4)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("IV"), 4);
+  ck_assert_int_eq(integerconverter_convertToInt("IV"), 4);
 }
 END_TEST
 
 START_TEST(test_can_convert_VIII_to_8)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("VIII"), 8);
+  ck_assert_int_eq(integerconverter_convertToInt("VIII"), 8);
 }
 END_TEST
 
 START_TEST(test_can_convert_X_to_10)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("X"), 10);
+  ck_assert_int_eq(integerconverter_convertToInt("X"), 10);
 }
 END_TEST
 
 START_TEST(test_can_convert_IX_to_9)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("IX"), 9);
+  ck_assert_int_eq(integerconverter_convertToInt("IX"), 9);
 }
 END_TEST
 
 START_TEST(test_can_convert_XLIX_to_49)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("XLIX"), 49);
+  ck_assert_int_eq(integerconverter_convertToInt("XLIX"), 49);
 }
 END_TEST
 
 START_TEST(test_can_convert_XCIX_to_99)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("XCIX"), 99);
+  ck_assert_int_eq(integerconverter_convertToInt("XCIX"), 99);
 }
 END_TEST
 
 START_TEST(test_can_convert_CDXCIX_to_499)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("CDXCIX"), 499);
+  ck_assert_int_eq(integerconverter_convertToInt("CDXCIX"), 499);
 }
 END_TEST
 
 START_TEST(test_can_convert_CMXCIX_to_999)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("CMXCIX"), 999);
+  ck_assert_int_eq(integerconverter_convertToInt("CMXCIX"), 999);
 }
 END_TEST
 
 START_TEST(test_can_convert_MCMLXXVI_to_1976)
 {
-  ck_assert_int_eq(romanconverter_convertToInt("MCMLXXVI"), 1976);
+  ck_assert_int_eq(integerconverter_convertToInt("MCMLXXVI"), 1976);
 }
 END_TEST
 
