@@ -286,11 +286,9 @@ END_TEST
 
 START_TEST(test_can_subtract_two_numbers)
 {
-  char * actual = romancalculator_subtraction("C", "XLI");
-
+  char actual[16];
+  romancalculator_subtraction("C", "XLI", actual);
   ck_assert_str_eq(actual, "LIX");
-
-  free(actual);
 }
 END_TEST
 
