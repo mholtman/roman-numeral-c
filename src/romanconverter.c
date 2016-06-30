@@ -3,17 +3,6 @@
 #include <math.h>
 #include "romanconverter.h"
 
-RomanConverter * romanconverter_create() {
-  struct RomanConverter *converter = malloc(sizeof(struct RomanConverter));
-
-  return converter;
-}
-
-void romanconverter_free(RomanConverter * converter) {
-    free(converter);
-    converter = NULL;
-}
-
 char * romanconverter_convertToRoman(int integerToConvert) {
 
   char * buffer = calloc(16, sizeof(char));

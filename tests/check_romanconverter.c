@@ -5,32 +5,7 @@
 #include "../src/integerconverter.h"
 #include "../src/romancalculator.h"
 
-
-START_TEST(test_roman_converter_create)
- {
-     RomanConverter *converter;
-
-     converter = romanconverter_create();
-
-     ck_assert_msg(NULL != converter, "Converter not created! Failure!");
-
-     romanconverter_free(converter);
- }
- END_TEST
-
- START_TEST(test_roman_converter_destroy)
- {
-   RomanConverter *converter;
-
-   converter = romanconverter_create();
-
-   romanconverter_free(converter);
-
-   ck_assert_msg(NULL == converter, "Converter not destroyed! Oh Nooos!");
- }
- END_TEST
-
- START_TEST(test_can_convert_I_to_1)
+START_TEST(test_can_convert_I_to_1)
  {
    ck_assert_int_eq(romanconverter_convertToInt("I"), 1);
  }
@@ -113,8 +88,6 @@ Suite * roman_suite(void)
   /* Core test case */
   tc_core = tcase_create("Core");
 
-  tcase_add_test(tc_core, test_roman_converter_create);
-  //tcase_add_test(tc_core, test_roman_converter_destroy);
   tcase_add_test(tc_core, test_can_convert_I_to_1);
   tcase_add_test(tc_core, test_can_convert_II_to_2);
   tcase_add_test(tc_core, test_can_convert_V_to_5);
