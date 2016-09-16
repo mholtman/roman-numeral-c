@@ -14,6 +14,7 @@ int main(void){
   integerSuite = integer_suite();
   operationsSuite = operations_suite();
   sr = srunner_create(romanSuite);
+  srunner_set_xml(sr, "TEST_RESULTS.xml");
   srunner_add_suite(sr, integerSuite);
   srunner_add_suite(sr, operationsSuite);
 

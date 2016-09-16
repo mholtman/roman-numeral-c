@@ -31,3 +31,7 @@
 # Debug files
 *.dSYM/
 *.su
+
+roman
+TEST_RESULTS.xml
+check_output.html
